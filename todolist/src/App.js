@@ -1,19 +1,24 @@
 import "./App.css"
 
-const Button = (props) => {
-  return <button onClick={props.onClickHandler}>{props.text}</button>
+const Link = (props) => {
+  return (
+    <p>
+      <a href={props.link}>{props.title}</a>
+    </p>
+  )
 }
 
-const LoginButton = (props) => {
-  return <Button text="Login" onClickHandler={props.onClickHandler} />
+const Sidebar = (props) => {
+  return <aside>{props.children}</aside>
 }
 
 const Container = () => {
-  const onClickHandler = () => {
-    alert("clicked")
-  }
-
-  return <LoginButton onClickHandler={onClickHandler} />
+  return (
+    <Sidebar>
+      <Link title="First link" link="/first" />
+      <Link title="Second link" link="/second" />
+    </Sidebar>
+  )
 }
 
 function App() {
