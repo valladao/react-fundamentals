@@ -1,28 +1,21 @@
 import "./App.css"
 
-const Link = (props) => {
+const CurrentSwitcher = (props) => {
   return (
-    <p>
-      <a href={props.link}>{props.title}</a>
-    </p>
-  )
-}
-
-const Sidebar = (props) => {
-  return <aside>{props.children}</aside>
-}
-
-const Container = () => {
-  return (
-    <Sidebar>
-      <Link title="First link" link="/first" />
-      <Link title="Second link" link="/second" />
-    </Sidebar>
+    <button onClick={props.handleChangeCurrency}>
+      Current currency is {props.currency}. Change it!
+    </button>
   )
 }
 
 function App() {
-  return <Container />
+  const changeCurrency = () => {
+    alert("Changing currency...")
+  }
+
+  return (
+    <CurrentSwitcher currency="BRL" handleChangeCurrency={changeCurrency} />
+  )
 }
 
 export default App
