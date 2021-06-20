@@ -3,13 +3,14 @@ import ReactDOM from "react-dom"
 //import App from "./App"
 import reportWebVitals from "./reportWebVitals"
 
+const rows = [{ text: "Text 1" }, { text: "Text 2" }, { text: "Text 3" }]
+
 ReactDOM.render(
-  React.createElement(
-    "div",
-    { id: "test" },
-    React.createElement("h1", {}, "A title"),
-    React.createElement("p", {}, "A paragraph")
-  ),
+  <table>
+    {rows.map((row, i) => {
+      return <tr>{row.text}</tr>
+    })}
+  </table>,
   document.getElementById("root")
 )
 
