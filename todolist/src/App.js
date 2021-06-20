@@ -1,19 +1,27 @@
-//const autoescape = <p>&copy; A paragraph</p>
+const data = {
+  title: "A simple post...",
+  date: "2021-06-20",
+}
 
-const AutoEscape = () => {
+const BlogPost = (params) => {
   return (
-    <p>
-      {
-        // I want to create comments here
-      }
-      Something becomes this
-      {/* Also here... */}
-    </p>
+    <div>
+      <h1>{params.title}</h1>
+      <p>{params.date}</p>
+    </div>
+  )
+}
+
+const Container = () => {
+  return (
+    <div>
+      <BlogPost {...data} />
+    </div>
   )
 }
 
 function App() {
-  return <AutoEscape />
+  return <Container />
 }
 
 export default App
