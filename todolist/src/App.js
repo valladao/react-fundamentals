@@ -1,24 +1,23 @@
 import "./App.css"
 
 const Button = (props) => {
-  return <button>{props.text}</button>
+  return <button onClick={props.onClickHandler}>{props.text}</button>
 }
 
-const SubmitButton = () => {
-  return <Button text="Submit" />
+const LoginButton = (props) => {
+  return <Button text="Login" onClickHandler={props.onClickHandler} />
 }
 
-const LoginButton = () => {
-  return <Button text="Login" />
+const Container = () => {
+  const onClickHandler = () => {
+    alert("clicked")
+  }
+
+  return <LoginButton onClickHandler={onClickHandler} />
 }
 
 function App() {
-  return (
-    <div>
-      <SubmitButton />
-      <LoginButton />
-    </div>
-  )
+  return <Container />
 }
 
 export default App
