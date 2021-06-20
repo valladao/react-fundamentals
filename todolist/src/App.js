@@ -1,21 +1,13 @@
-import "./App.css"
-
-const CurrentSwitcher = (props) => {
-  return (
-    <button onClick={props.handleChangeCurrency}>
-      Current currency is {props.currency}. Change it!
-    </button>
-  )
-}
+const myID = "test"
+const myClass = "test"
+const element = (
+  <h1 id={myID} className={myClass}>
+    Hello, world!
+  </h1>
+)
 
 function App() {
-  const changeCurrency = () => {
-    alert("Changing currency...")
-  }
-
-  return (
-    <CurrentSwitcher currency="BRL" handleChangeCurrency={changeCurrency} />
-  )
+  return element
 }
 
 export default App
