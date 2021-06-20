@@ -1,27 +1,13 @@
-const data = {
-  title: "A simple post...",
-  date: "2021-06-20",
-}
-
-const BlogPost = (params) => {
-  return (
-    <div>
-      <h1>{params.title}</h1>
-      <p>{params.date}</p>
-    </div>
-  )
-}
-
-const Container = () => {
-  return (
-    <div>
-      <BlogPost {...data} />
-    </div>
-  )
-}
+const elements = ["Elem. 1", "Elem. 2", "Elem. 3"]
 
 function App() {
-  return <Container />
+  return (
+    <ul>
+      {elements.map((value, index) => {
+        return <li key={index}>{value}</li>
+      })}
+    </ul>
+  )
 }
 
 export default App
