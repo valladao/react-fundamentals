@@ -1,13 +1,19 @@
-const myID = "test"
-const myClass = "test"
-const element = (
-  <h1 id={myID} className={myClass}>
-    Hello, world!
-  </h1>
-)
+//const autoescape = <p>&copy; A paragraph</p>
+
+const AutoEscape = () => {
+  return (
+    <p>
+      {
+        // I want to create comments here
+      }
+      Something becomes this
+      {/* Also here... */}
+    </p>
+  )
+}
 
 function App() {
-  return element
+  return <AutoEscape />
 }
 
 export default App
